@@ -1,45 +1,29 @@
-
+import json
 
 def exercice_1():
     # Créer un fichier texte (carte.txt) contenant la variable text
     text = "WWWW-----W\nW-------WW\nWWW-M--WWW\nWWWWWW--WW"
-    try:
-        file = open("carte.txt", "w")
+    with open("carte.txt", "w") as file:
         file.writelines(text)
-    except ValueError:
-        print("Impossible d'ouvrir le fichier !")
-    finally:
-        file.close()
 
 
 def exercice_2():
 
     # Afficher en console le fichier texte créé à l'exercice 1
-    try:
-        with open("carte.txt", 'r') as readfile:
-            for lines in readfile.readlines():
-                print(lines)
-    except ValueError:
-        print("Impossible d'ouvrir le fichier !")
-    pass
-
+    with open("carte.txt", 'r') as readfile:
+        for lines in readfile.readlines():
+            print(lines)
 
 def exercice_3(lettre):
     # Vérifier si la lettre entrée en paramètre est présente
     # dans le fichier créé à l'exercice 1 (retourner True si
     # la lettre est présente et False sinon)
-    try:
-        with open("carte.txt", 'r') as f:
-            lines = f.read().split("\n")
-            for line in lines:
-                if lettre in line:
-                    return True
-            return False
-
-    except ValueError:
-        print("Impossible d'ouvrir le fichier !")
-    pass
-
+    with open("carte.txt", 'r') as f:
+        lines = f.read().split("\n")
+        for line in lines:
+            if lettre in line:
+                return True
+        return False
 
 def exercice_4(lettre):
     # Trouver la position de la lettre passée en paramètre dans
@@ -47,22 +31,12 @@ def exercice_4(lettre):
     # doit renvoyer le tuple (4, 2) car le lettre "M" est dans la colonne
     # 4 (numérotation à partir de 0) et la ligne 2 dans la variable text de
     # l'exercice 1.
-    try:
-        with open("carte.txt", 'r') as f:
-            lines = f.read().split("\n")
-            for l in range(len(lines)):
-                text = lines[l].find(lettre)
-                if text != -1:
-                    break
-        f.close()
-        if text != -1:
-            return [text, l]
-        else:
-            return -1
-    except ValueError:
-        print("Impossible d'ouvrir le fichier !")
-    finally:
-        f.close()
+    with open("carte.txt", 'r') as file:
+        lines = file.read().split("\n")
+        for index, item in enumerate(lines):
+            if item.find(lettre) is not -1: 
+                return item.index(lettre), index
+
 
 
 def exercice_5():
@@ -72,28 +46,21 @@ def exercice_5():
     # Ouvrir le fichier 
     # checker toutes les lettres et compter le nombre d'apparition (voir exercise python 3 livre)
     # Ajouter au dictionnaire la lettre (key) et le nbre de fois que la lettre apparait
-    MyDict = {}
-    LettreW = "W"
-    LettreTiret = "-"
-    LettreM = "M"
-    try:
-        with open("carte.txt", 'r') as f:
-            lines = f.read().split("\n")
-            for line in lines:
-                for c in line:
-                    print (c)
+    Mydict = {}
+    with open("carte.txt", 'r') as file:
+        lines = file.read().split("\n")
+        for line in lines:
+            for car in line:
+                Mydict[car] = line.count(car)
+            print(Mydict)
 
-                MyDict[line] = l
-    except ValueError:
-        print("Impossible d'ouvrir le fichier !")
-    finally:
-        f.close()
-
-    pass
-
-def exercice_6():
+def exercice_6(filename):
     # Tranformer le fichier texte de l'exercice 1 en fichier JSON
-    pass
+    with open(filename, 'r') as file:
+        json_data = json.dump(file)
+    return json_data
+
+    
 
 def exercice_7():
     # Demander si le joueur veut continuer le jeu (avec input). Si la
@@ -119,6 +86,6 @@ if __name__ == "__main__":
     #exercice_2()
     #print(exercice_3("M"))
     #print(exercice_4("M"))
-    #exercice_5()
+    print(exercice_5())
     #exercice_6()
-    exercice_7()
+    #exercice_7()
