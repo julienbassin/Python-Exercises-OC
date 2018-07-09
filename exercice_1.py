@@ -51,14 +51,14 @@ def exercice_5():
         lines = file.read().split("\n")
         for line in lines:
             for car in line:
+                #si ton car est dans ton dictionnaire tu incrementes l'indice de ton car + 1 sinon c'est egal à 1
                 Mydict[car] = line.count(car)
             print(Mydict)
 
-def exercice_6(filename):
+def exercice_6():
     # Tranformer le fichier texte de l'exercice 1 en fichier JSON
-    with open(filename, 'r') as file:
-        json_data = json.dump(file)
-    return json_data
+    json_data = json.dumps({"a":True, "b":2})
+    print(json_data)
 
     
 
@@ -87,5 +87,5 @@ if __name__ == "__main__":
     #print(exercice_3("M"))
     #print(exercice_4("M"))
     print(exercice_5())
-    #exercice_6()
+    exercice_6()
     #exercice_7()
