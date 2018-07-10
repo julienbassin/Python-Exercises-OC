@@ -31,7 +31,7 @@ while Continue_party:
         print("you earned three of times of your bet")
     elif magic_number % 2 == bet_number % 2:
         print("you earned an half of your bet")
-        Amount = (ceil)bet * 0.5
+        Amount = ceil(bet * 0.5)
     else:
         print("you lost your bet")
         Amount = Amount - bet
