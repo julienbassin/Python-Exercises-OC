@@ -11,13 +11,13 @@ while Continue_party:
     while bet_number < 0 or bet_number > 49:
         bet_number = input("Enter a number between 0 and 49 ?")
         try:
-            bet_number = (int)bet_number
+            bet_number = int(bet_number)
         except ValueError:
             print("This is not a number")
             bet_number = -1
             continue
-    while bet < 0  or bet => Amount:
-        bet = input(" how much do ?")
+    while bet <= 0  or bet > Amount:
+        bet = input("how much do you want to bet ?")
         try:
             bet = int(bet)
         except ValueError:
