@@ -28,7 +28,9 @@ while Continue_party:
 
     if magic_number == bet_number:
         Amount = bet * 3
+        print("you earned three of times of your bet")
     elif magic_number % 2 == bet_number % 2:
+        print("you earned an half of your bet")
         Amount = (ceil)bet * 0.5
     else:
         print("you lost your bet")
@@ -38,4 +40,9 @@ while Continue_party:
         print("no more money , you have to leave !")
         Continue_party = False
     else:
+        print("it remains you ", Amount, "$")
+        Quit = input("would you like to continue ?")
+        if Quit == "q" or Quit == "Q":
+            print("you leave the party")
+            Continue_party = False
         
