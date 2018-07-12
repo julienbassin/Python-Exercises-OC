@@ -5,8 +5,6 @@ def main():
     amount = 1000
     continue_party = True
     bet_number = -1
-
-
     print("You will start a part with", amount, "$")
     while continue_party:
         while bet_number < 0 or bet_number > 49:
