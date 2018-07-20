@@ -60,7 +60,15 @@ def exercice_6():
     json_data = json.dumps({"a":True, "b":2})
     print(json_data)
 
+def fonction_liste(*parametres, sep= '', fin="\n"):
     
+    parametres = list(parametres)
+    for i, parametre in enumerate(parametres):
+        parametres[i] = str(parametre)
+    chaine = sep.join(parametres)
+    chaine +=fin
+    print(chaine, end='')
+
 
 def exercice_7():
     # Demander si le joueur veut continuer le jeu (avec input). Si la
@@ -81,11 +89,36 @@ def exercice_7():
             print("Réponse non correcte")
             eval(input("Voulez-vous continuer ?\n").lower())
 
+def displayASCII():
+    i = 0
+    while i <= 969:
+        print("La lettre actuelle: ", chr(i))
+        i+=1
+
+def displayAccent():
+    i = 128
+    for i in range(i, 256):
+        print("la lettre actuelle: ", chr(i))
+
+def maj_min():
+    i = 65
+    majus, minusc = "", ""
+    for i in range(i, 122):
+        if i > 65 and i < 90:
+            i += 32
+            print("la lettre en minuscule: ", chr(i))
+        elif i > 97 and i < 122:
+            i -= 32
+            print("la lettre en majuscule: ", chr(i))
+
+def debut_et_fin(lst):
+    debut = lst[0]
+    fin = lst[-1]
+
+    return debut,fin
+
 if __name__ == "__main__":    
-    #exercice_1()
-    #exercice_2()
-    #print(exercice_3("M"))
-    #print(exercice_4("M"))
-    print(exercice_5())
-    exercice_6()
-    #exercice_7()
+    #maj_min()
+    deb , fin = debut_et_fin([1,3,4,5])
+    print(deb)
+    print(fin)
