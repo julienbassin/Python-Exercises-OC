@@ -15,12 +15,12 @@ def maze_nestedlist(file):
 
 def position_empty(nested_list):
     empty_list = [] 
-    for line in range(15):
-        for column in range(15):
+    for line in range(len(nested_list)):
+        for column in range(len(nested_list)):
             if nested_list[line][column] == " ":
                 empty_list.append((line, column))
     print(empty_list)
                 
 
-position_liste = maze_nestedlist("labyrinthe.txt")
-position_empty(position_liste)
+maze = maze_nestedlist("labyrinthe.txt")
+position_empty(maze)
