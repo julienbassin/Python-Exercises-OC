@@ -52,15 +52,14 @@ def main():
     print("Opening {0}".format(file))
     while Continuer != False:
         choix  = input("entrer une lettre ")
-        if choix.lower() != '':
-            if choix == '':
-                break
+        if choix.lower() not in {'q', ''}:
             maze = maze_nestedlist(file)
             print(get_position(maze))
             pos = get_position_mcgyver(maze)        
             print(set_position_mcgyver(choix, pos))
+        else:
+            break
 
 if __name__ == '__main__':
     main()
-    
     
