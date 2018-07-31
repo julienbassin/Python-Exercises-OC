@@ -39,7 +39,7 @@ def set_position_mcgyver(choice, position):
     if choice.lower() == "g":
         print("incrementation de x ")
         x,y = x-1, y
-    elif choice.lower() == "d":
+    if choice.lower() == "d":
         print("incrementation de x ")
         x,y = x+1, y
     return (x,y)
