@@ -9,7 +9,6 @@ def maze_nestedlist(file):
             for l in line:
                 sub_list.append(l)
             new_list.append(sub_list)
-        print(new_list)
     return new_list
 
 def get_position(nested_list):
@@ -20,7 +19,7 @@ def get_position(nested_list):
                 empty_list.append((line, column))
     return empty_list
 
-def get_position_mcgyver(nested_list):
+def get_position_MG(nested_list):
     MG_list = []
     for line in range(len(nested_list)):
         for column in range(len(nested_list)):
@@ -28,21 +27,21 @@ def get_position_mcgyver(nested_list):
                     MG_list.append((line, column))
     return MG_list 
 
-def set_position_mcgyver(choice, position):
+def move_position_MG():
+    pass
+
+def set_position_MG(choice, position):
     y,x  = position[0]
     if choice.lower() == "b":
-        print("incrementation de y ")
         x,y = x, y+1
     if choice.lower() == "h":
-        print("incrementation de y ")
         x,y = x, y-1
     if choice.lower() == "g":
-        print("incrementation de x ")
         x,y = x-1, y
     if choice.lower() == "d":
-        print("incrementation de x ")
         x,y = x+1, y
-    return (x,y)
+    position_mcgyver = (x,y)
+    print("la nouvelle position est : {0}".format(position_mcgyver))
     
 def main():
     global position_mcgyver
@@ -54,9 +53,8 @@ def main():
         choix  = input("entrer une lettre ")
         if choix.lower() not in {'q', ''}:
             maze = maze_nestedlist(file)
-            print(get_position(maze))
-            pos = get_position_mcgyver(maze)        
-            print(set_position_mcgyver(choix, pos))
+            pos = get_position_MG(maze)        
+            print(set_position_MG(choix, pos))
         else:
             break
 
