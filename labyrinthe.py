@@ -41,19 +41,19 @@ def set_position_MG(choice, position):
     print("la nouvelle position est : {0}".format(position_mcgyver))
     
 def main():
-    global position_mcgyver
+    global position_MG
     file = "labyrinthe.txt"
-    Continuer = True
+    Continue = True
     choix = ''
     maze = maze_nestedlist(file)
     
-    position_mcgyver = get_position(maze, "M")
-    print("Current position: {0}".format(position_mcgyver))
+    position_MG = get_position(maze, "M")
+    print("Current position: {0}".format(position_MG))
     
-    while Continuer:
+    while Continue:
         choix = input("entrer une lettre ")
         if choix.lower() in {'h', 'd', 'b','g'}:                   
-            set_position_MG(choix, position_mcgyver)
+            set_position_MG(choix, position_MG)
         else:
             break
 
