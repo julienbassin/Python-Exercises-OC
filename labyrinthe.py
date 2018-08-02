@@ -11,23 +11,20 @@ def maze_nestedlist(file):
             new_list.append(sub_list)
     return new_list
 
-def get_position(nested_list):
-    empty_list = []    
+def get_position(nested_list, lettre):
+    empty_list = []
+    MG_list = []    
     for line in range(len(nested_list)):
         for column in range(len(nested_list)):
             if nested_list[line][column] == " ":
                 empty_list.append((line, column))
-    return empty_list
+                return empty_list
+            elif nested_list[line][column] == lettre:
+                MG_list.append((line, column))
+                return MG_list
 
-def get_position_MG(nested_list):
-    MG_list = []
-    for line in range(len(nested_list)):
-        for column in range(len(nested_list)):
-            if nested_list[line][column] == "M":
-                    MG_list.append((line, column))
-    return MG_list 
 
-def move_position_MG():
+def move_position_MG(position_empty_maze):
     pass
 
 def set_position_MG(choice, position):
@@ -48,13 +45,15 @@ def main():
     file = "labyrinthe.txt"
     Continuer = True
     choix = ''
-    print("Opening {0}".format(file))
-    while Continuer != False:
-        choix  = input("entrer une lettre ")
-        if choix.lower() not in {'q', ''}:
-            maze = maze_nestedlist(file)
-            pos = get_position_MG(maze)        
-            print(set_position_MG(choix, pos))
+    maze = maze_nestedlist(file)
+    
+    position_mcgyver = get_position(maze, "M")
+    print("Current position: {0}".format(position_mcgyver))
+    
+    while Continuer:
+        choix = input("entrer une lettre ")
+        if choix.lower() in {'h', 'd', 'b','g'}:                   
+            set_position_MG(choix, position_mcgyver)
         else:
             break
 
