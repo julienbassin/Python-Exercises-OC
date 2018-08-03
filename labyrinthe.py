@@ -37,8 +37,8 @@ def set_position_MG(choice, position):
         x,y = x-1, y
     if choice.lower() == "d":
         x,y = x+1, y
-    position_mcgyver = (x,y)
-    print("la nouvelle position est : {0}".format(position_mcgyver))
+    position_MG = (x,y)
+    print("la nouvelle position est : {0}".format(position_MG))
     
 def main():
     global position_MG
