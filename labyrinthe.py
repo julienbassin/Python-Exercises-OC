@@ -11,32 +11,33 @@ def maze_nestedlist(file):
             new_list.append(sub_list)
     return new_list
 
-def get_position(nested_list, lettre):
-    empty_list = []
-    MG_list = []    
+def get_position(nested_list, lettre):    
     for line in range(len(nested_list)):
         for column in range(len(nested_list)):
             if nested_list[line][column] == " ":
+                empty_list = []
                 empty_list.append((line, column))
                 return empty_list
             elif nested_list[line][column] == lettre:
+                MG_list = []
                 MG_list.append((line, column))
                 return MG_list
 
-
-def move_position_MG(position_empty_maze):
-    pass
-
 def set_position_MG(choice, position):
+    """
+        vérifier si le déplacement est possible (donc pas de mur)
+        déplacer 
+        afficher la carte
+    """
     y,x  = position[0]
     if choice.lower() == "b":
-        x,y = x, y+1
+        y+=1
     if choice.lower() == "h":
-        x,y = x, y-1
+        y-=1
     if choice.lower() == "g":
-        x,y = x-1, y
+        x-=1
     if choice.lower() == "d":
-        x,y = x+1, y
+        x+=1
     position_MG = (x,y)
     print("la nouvelle position est : {0}".format(position_MG))
     
