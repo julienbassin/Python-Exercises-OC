@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28010.2003
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "HackerrankPython3", "HackerrankPython3\HackerrankPython3.pyproj", "{12B9AC35-6D27-49DD-8E6F-254E5A1A59CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{12B9AC35-6D27-49DD-8E6F-254E5A1A59CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12B9AC35-6D27-49DD-8E6F-254E5A1A59CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0099C38F-863A-4900-B347-8B7EA7F5D920}
+	EndGlobalSection
+EndGlobal
