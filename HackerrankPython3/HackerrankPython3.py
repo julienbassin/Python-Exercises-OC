@@ -5,13 +5,13 @@ class Queue:
 
     def enqueue(self, data):
         if data not in self.queue:
-            self.queue.insert(0, data)
+            self.queue.append(data)
             return self.queue
         return False
 
     def dequeue(self):
         if len(self.queue):
-            self.queue.pop()
+            self.queue.pop(0)
             return self.queue
         return ("Queue Empty !")
     
@@ -22,6 +22,8 @@ q = Queue()
 q.enqueue("toto")
 q.enqueue("tata")
 q.enqueue("titi")
+q.printQueue()
+q.dequeue()
 q.printQueue()
             
 
